@@ -2,7 +2,7 @@ import React from "react";
 import TrackList from "../TrackList/TrackList";
 import './SearchResults.css';
 
-class SearchResutls extends React.Component {
+class SearchResults extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
@@ -11,10 +11,10 @@ class SearchResutls extends React.Component {
 		return (
 			<div className="SearchResults">
 				<h2>Results</h2>
-				{/* <!-- Add a TrackList component --> */}
+				<TrackList tracks={this.props.searchResults} onAdd={this.props.onAdd} isRemoval={false}/>
 			</div>
 		);
 	}
 }
 
-export default SearchResutls;
+export default SearchResults;
