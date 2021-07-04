@@ -4,11 +4,15 @@ import './Track.css';
 class Track extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
 
 		this.addTrack = this.addTrack.bind(this);
 		this.removeTrack = this.removeTrack.bind(this);
 	}
+
+	// componentDidUpdate() {
+	// 	console.log('In Track Component:');
+	// 	console.log(this.props.track);
+	// }
 
     renderAction(isRemoval) {
         if (isRemoval) {
@@ -31,12 +35,10 @@ class Track extends React.Component {
 			<div className="Track">
 				<div className="Track-information">
 					<h3>{this.props.track.name}</h3>
-					<p>
-						{this.props.artist | this.props.album}
-					</p>
+					<p>{this.props.track.artist} | {this.props.track.album}</p>
 				</div>
 				<button className="Track-action">
-					{/* <!-- + or - will go here --> */}
+					{this.renderAction(this.props.isRemoval)}
 				</button>
 			</div>
 		);
