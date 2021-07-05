@@ -1,6 +1,6 @@
 let accessToken = null;
 const clientID = "3ba2149eb2634989ab3a29a69c94bc48";
-const redirectUrl = "jammming_hudson.surge.sh";
+const redirectUrl = "http://localhost:3000";
 
 const Spotify = {
 	getAccessToken() {
@@ -48,7 +48,7 @@ const Spotify = {
             if(!jsonResponse.tracks) {
                 return [];
             } else {
-                // console.log(jsonResponse);
+                console.log(jsonResponse);
                 return jsonResponse.tracks.items.map(track =>
                 ({
                     id: track.id,
