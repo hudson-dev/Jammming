@@ -1,7 +1,6 @@
 import React from "react";
 import "./Track.css";
-import Play from "./Controls/Play";
-import Pause from "./Controls/Pause";
+import Controls from './Controls/Controls.js'
 
 class Track extends React.Component {
 	constructor(props) {
@@ -36,13 +35,13 @@ class Track extends React.Component {
 
 	playPreview() {
 		console.log("play");
-		this.setState({ playing: true });
+		this.setState({ isPlaying: true });
 		this.state.audio.play();
 	}
 
 	pausePreview() {
 		console.log("pause");
-		this.setState({ playing: false });
+		this.setState({ isPlaying: false });
 		this.state.audio.pause();
 	}
 
@@ -65,12 +64,12 @@ class Track extends React.Component {
 				</div>
 				<button className="Track-action">
 					{this.renderAction(this.props.isRemoval)}
+					<Controls
+						isPlaying={this.state.isPlaying}
+						playPreview={this.playPreview}
+						pausePreview={this.pausePreview}
+					/>
 				</button>
-				{this.state.isPlaying ? (
-					<Pause pausePreview={this.pausePreview} />
-				) : (
-					<Play playPreview={this.playPreview} />
-				)}
 			</div>
 		);
 	}

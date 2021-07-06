@@ -7,6 +7,7 @@ class Pause extends React.Component {
 		super(props);
 		this.state = {};
 	}
+	
 	render() {
 		return (
 			<button className="Track-action" onClick={this.props.pausePreview}>

@@ -7,11 +7,6 @@
   box-shadow: 0 4px 2px 2px #000000;
 }
 
-h2 {
-  text-align: left;
-  padding-left: 10px;
-}
-
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
